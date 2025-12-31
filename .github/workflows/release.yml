@@ -73,7 +73,8 @@ jobs:
             -destination "generic/platform=iOS" \
             -configuration Release \
             CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Build for iOS Simulator
         run: |
@@ -83,7 +84,8 @@ jobs:
             -destination "id=${SIMULATOR_ID}" \
             -configuration Release \
             CODE_SIGN_IDENTITY="" \
-            CODE_SIGNING_REQUIRED=NO
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Run tests
         run: |
@@ -93,6 +95,7 @@ jobs:
             -destination "id=${SIMULATOR_ID}" \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
             || echo "Tests completed (some may have been skipped)"
 
       - name: Calculate next version
