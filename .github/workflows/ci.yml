@@ -1,14 +1,12 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-      - static-library
   pull_request:
     branches:
       - main
-      - static-library
+  push:
+    branches:
+      - main
 
 jobs:
   build-and-test:
